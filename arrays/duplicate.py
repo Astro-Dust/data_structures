@@ -6,12 +6,12 @@
 # Output: true
 
 def has_duplicate(nums:list):
-  seen = []
+  seen = set() # mais otimizado (set não aceita item duplicado)
 
   for num in nums:
     if num in seen:
       return True
-    seen.append(num)
+    seen.add(num)
   return False
 
 result = has_duplicate([1,2,3,1])
