@@ -1,9 +1,13 @@
-def average(numbers:list):
-  sum = 0
-  for n in numbers:
-    sum += n
-  return sum / len(numbers)
+from functools import reduce
 
-avg = average([11,4,22,43,5,8,77])
+def average(numbers:list):
+  # sum = 0
+  # for n in numbers:
+  #   sum += n
+  # return sum / len(numbers)
+  avg = reduce(lambda x, y: x+y, numbers)
+  return avg / len(numbers)
+
+avg = average([2,2,1,44,73,54,14])
 
 print(f'The arithmetic average is: {avg:.2f}')
